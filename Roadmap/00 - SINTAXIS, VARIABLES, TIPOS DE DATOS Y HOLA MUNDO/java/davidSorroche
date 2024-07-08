@@ -1,0 +1,129 @@
+// sitio web oficial: https://docs.oracle.com/javase/8/docs/api/      
+
+/**
+ *
+ * @author David Sorroche
+ */
+
+public class SintaxisVariablesTiposDatosHolaMundo {
+    // Esto es un comentario de una sóla línea 
+    
+    /*
+        Esto es un comentario de varias líneas.
+    
+        Declaramos las variables de los principales
+        tipos primitivos.
+    */
+    
+    private final String constante;
+    
+    private String variableString;
+    private byte variableByte;
+    private short variableShort;
+    private int variableInt;
+    private float variableFloat;
+    private double variableDouble;
+    private char variableChar;
+    private boolean variableBoolean;
+    
+    public SintaxisVariablesTiposDatosHolaMundo() {
+        constante = "Java";
+    }
+
+    public String getVariableString() {
+        return variableString;
+    }
+
+    public void setVariableString(String variableString) {
+        this.variableString = variableString;
+    }
+
+    public byte getVariableByte() {
+        return variableByte;
+    }
+
+    public void setVariableByte(byte variableByte) {
+        this.variableByte = variableByte;
+    }
+
+    public short getVariableShort() {
+        return variableShort;
+    }
+
+    public void setVariableShort(short variableShort) {
+        this.variableShort = variableShort;
+    }
+
+    public int getVariableInt() {
+        return variableInt;
+    }
+
+    public void setVariableInt(int variableInt) {
+        this.variableInt = variableInt;
+    }
+
+    public float getVariableFloat() {
+        return variableFloat;
+    }
+
+    public void setVariableFloat(float variableFloat) {
+        this.variableFloat = variableFloat;
+    }
+
+    public double getVariableDouble() {
+        return variableDouble;
+    }
+
+    public void setVariableDouble(double variableDouble) {
+        this.variableDouble = variableDouble;
+    }
+
+    public char getVariableChar() {
+        return variableChar;
+    }
+
+    public void setVariableChar(char variableChar) {
+        this.variableChar = variableChar;
+    }
+
+    public boolean isVariableBoolean() {
+        return variableBoolean;
+    }
+
+    public void setVariableBoolean(boolean variableBoolean) {
+        this.variableBoolean = variableBoolean;
+    }
+
+    @Override
+    public String toString() {
+        return "¡Hola, ".concat(constante) + '!';
+    } 
+}
+
+public class Principal {
+    public static void main(String[] args) {
+        SintaxisVariablesTiposDatosHolaMundo svtdhm = new SintaxisVariablesTiposDatosHolaMundo();
+        
+        svtdhm.setVariableString("Primer reto.");
+        svtdhm.setVariableByte((byte)0);
+        svtdhm.setVariableShort((short)1);
+        svtdhm.setVariableInt(1450);
+        svtdhm.setVariableFloat(2.5f);
+        svtdhm.setVariableDouble(-15.283);
+        svtdhm.setVariableChar('y');
+        svtdhm.setVariableBoolean(true);
+        
+        System.out.println(svtdhm.getVariableString());
+        System.out.println(svtdhm.getVariableByte());
+        System.out.println(svtdhm.getVariableShort());
+        System.out.println(svtdhm.getVariableInt());
+        System.out.println(svtdhm.getVariableFloat());
+        System.out.println(svtdhm.getVariableDouble());
+        System.out.println(svtdhm.getVariableChar());
+        System.out.println(svtdhm.isVariableBoolean());
+        
+        System.out.println();
+        
+        System.out.println(svtdhm.toString());
+    }
+}
