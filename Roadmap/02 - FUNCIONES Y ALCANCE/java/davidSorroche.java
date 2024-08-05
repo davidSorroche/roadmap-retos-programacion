@@ -12,6 +12,8 @@ public class Funciones {
     */
     private final String textoFunciones = "Reto de Programación #02 FUNCIONES Y ALCANCE - Java";
     
+    public String variablePublica = "Comenzamos a programar";
+    
     // Devuelve el texto de la constante "textoFunciones".
     public void funcionSinParametrosSinRetorno() {
         System.out.println(textoFunciones);
@@ -40,8 +42,34 @@ public class Funciones {
             throw new ArithmeticException("No se puede dividir ningún número entre 0");
         }
         
-        return num1 <= num2 ? Math.round((((num1 * num2) - num3) * 100.0) / 100.0) 
-                            : Math.round((((num1 / num2) + num3) * 100.0) / 100.0);
+        return num1 <= num2 ? Math.round(((num1 * num2) - num3) * 100) / 100.0 
+                            : Math.round(((num1 / num2) + num3) * 100) / 100.0;
+        
+    }
+    
+    public void funcionesAnidadas() {
+        class FuncionAnidada {
+            private final int numeroAleatorio;
+            
+            private FuncionAnidada() {
+                numeroAleatorio = funcionAnidada();
+            }
+            
+            private int funcionAnidada() {
+                return (int) (Math.random() * 100) + 1 * 5;
+            }
+            
+            private int getNumeroAleatorio() {
+                return numeroAleatorio;
+            }
+        }
+        
+        FuncionAnidada fA = new FuncionAnidada();
+        System.out.println(fA.getNumeroAleatorio());
+    }
+
+    public String getTextoFunciones() {
+        return textoFunciones;
     }
 }
 
@@ -117,12 +145,17 @@ public class PrincipalFunciones_Alcances {
     public static void main(String[] args) {
         Funciones f = new Funciones();
         
+        System.out.println(f.variablePublica);
         f.funcionSinParametrosSinRetorno();
         f.funcionConParametrosSinRetorno("Ná, es bromita.");
         System.out.println(f.funcionSinParametrosConRetorno());
-        System.out.println(f.funcionConParametrosConRetorno(11, 30, 5));
-        System.out.println(f.funcionConParametrosConRetorno(30, 11, 10));
+        System.out.println(f.funcionConParametrosConRetorno(13, 30, 5));
+        System.out.println(f.funcionConParametrosConRetorno(30, 13, 10));
         System.out.println(f.funcionConParametrosConRetorno(11, 11, 11));
+        f.funcionesAnidadas();
+        System.out.println("El valor de la variable local \"textoFunciones\" sólo se puede saber"
+                          .concat(" llamando al método getTextoFunciones(): ")
+                          .concat(f.getTextoFunciones()));
         
         DificultadExtraFunciones_Alcances dE = new DificultadExtraFunciones_Alcances();
         System.out.println("\n" + dE.numerosYTextos("     Practicando Retos    De Programación", "#02 Funciones Y Alcance - Java"));
